@@ -1,0 +1,26 @@
+# dependencies and build output (reinstall with npm install / pip)
+node_modules/
+out/
+dist/
+tools/.venv/
+__pycache__/
+*.pyc
+
+# video pipeline working files (only */final/ is needed by the app)
+*/raw/
+*/jobs.txt
+*.log
+
+# secrets must never be committed (Deskat keeps them in the macOS Keychain-encrypted app data)
+.env
+.env.*
+client_secret*.json
+*credentials*.json
+secrets.bin
+settings.json
+assistant-data.json
+
+# macOS / editors
+.DS_Store
+.vscode/
+.idea/

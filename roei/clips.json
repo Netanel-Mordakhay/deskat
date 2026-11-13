@@ -1,0 +1,85 @@
+{
+  "cat": "roei",
+  "defaults": {
+    "model": "kling-video-v2_5",
+    "resolution": "1080p",
+    "duration": "5",
+    "enable_audio": "false"
+  },
+  "poses": {
+    "stand": {
+      "image": "poses/stand.jpg"
+    },
+    "walk": {
+      "image": "poses/walk.jpg",
+      "from": "mid-stride frame of stand_to_walk_full"
+    },
+    "break": {
+      "image": "poses/break.jpg",
+      "from": "frame of break_start_full"
+    }
+  },
+  "clips": {
+    "idle": {
+      "from": "stand",
+      "to": "stand",
+      "tail": true,
+      "prompt": "The man stands relaxed in place, breathing naturally, one slow blink and a tiny natural weight shift, arms relaxed at his sides, then returns to the exact starting pose. Very subtle, calm movement. Static locked-off camera, flat solid light blue-gray background unchanged throughout."
+    },
+    "keepyuppy": {
+      "from": "stand",
+      "to": "stand",
+      "tail": true,
+      "prompt": "A soccer ball suddenly appears out of thin air and drops in front of him; he grins and juggles it skillfully a few times with his foot and knee, then the ball vanishes into thin air and he returns to the exact starting pose with his arms relaxed at his sides. No other objects. Static locked-off camera, flat solid light blue-gray background unchanged throughout."
+    },
+    "selfie": {
+      "from": "stand",
+      "to": "stand",
+      "tail": true,
+      "prompt": "The man takes a smartphone out of the pocket of his shorts, holds it up at arm's length and poses for a selfie with a big smile and a peace sign, then puts the phone back in his pocket and returns to the exact starting pose with his arms relaxed at his sides. Static locked-off camera, flat solid light blue-gray background unchanged throughout."
+    },
+    "flex": {
+      "from": "stand",
+      "to": "stand",
+      "tail": true,
+      "prompt": "The man playfully strikes a bodybuilder double-biceps flex pose toward the camera, holds it for a moment, laughs, then relaxes and returns to the exact starting pose with his arms relaxed at his sides. Static locked-off camera, flat solid light blue-gray background unchanged throughout."
+    },
+    "break_start": {
+      "from": "stand",
+      "to": "break",
+      "tail": false,
+      "prompt": "The man drops down to the floor in one smooth move into breakdance footwork, supporting himself on his hands and spinning his legs around in a fast six-step, staying in the center of the frame and fully visible. Static locked-off camera, flat solid light blue-gray background unchanged throughout."
+    },
+    "break": {
+      "from": "break",
+      "to": "break",
+      "tail": true,
+      "prompt": "The man keeps doing fast breakdance six-step footwork on the floor, supported on his hands, a smooth repeating rhythm, staying in the center of the frame, then returns to the exact starting pose. Static locked-off camera, flat solid light blue-gray background unchanged throughout."
+    },
+    "break_end": {
+      "from": "break",
+      "to": "stand",
+      "tail": true,
+      "prompt": "The man finishes his breakdance footwork, pops back up to his feet in one smooth move and stands relaxed with his arms at his sides, ending in the exact standing pose of the final frame. Static locked-off camera, flat solid light blue-gray background unchanged throughout."
+    },
+    "stand_to_walk": {
+      "from": "stand",
+      "to": "walk",
+      "tail": false,
+      "prompt": "The man turns toward the left edge of the frame and starts walking to the left at a calm relaxed pace, seen in full side profile. The camera smoothly tracks alongside him so he stays centered in the frame the whole time, fully visible from head to shoes. Flat solid light blue-gray background unchanged throughout, no floor texture, no shadows, no walls."
+    },
+    "walk": {
+      "from": "walk",
+      "to": "walk",
+      "tail": true,
+      "prompt": "The man walks steadily to the left at a calm relaxed pace in full side profile, a smooth natural walk cycle. The camera tracks alongside him so he stays centered in the frame the whole time, fully visible from head to shoes. Flat solid light blue-gray background unchanged throughout, no floor texture, no shadows, no walls."
+    },
+    "walk_to_stand": {
+      "from": "walk",
+      "to": "stand",
+      "tail": true,
+      "prompt": "The man walking to the left slows down, stops, turns toward the camera and stands relaxed, ending in the exact standing pose of the final frame. The camera tracks him so he stays centered. Flat solid light blue-gray background unchanged throughout, no floor texture, no shadows, no walls."
+    }
+  },
+  "processing": "tools/process_clip.py roei <clip> --person  (denim is close to the blue-gray background)"
+}

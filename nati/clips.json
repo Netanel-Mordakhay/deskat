@@ -1,0 +1,88 @@
+{
+  "cat": "nati",
+  "defaults": {
+    "model": "kling-video-v2_5",
+    "resolution": "1080p",
+    "duration": "5",
+    "enable_audio": "false"
+  },
+  "poses": {
+    "stand": {
+      "image": "poses/stand.jpg"
+    },
+    "walk": {
+      "image": "poses/walk.jpg",
+      "from": "a mid-stride side-profile frame of stand_to_walk_full"
+    },
+    "dance": {
+      "image": "poses/dance.jpg",
+      "from": "a frame of dance_start (pending)"
+    }
+  },
+  "clips": {
+    "idle": {
+      "from": "stand",
+      "to": "stand",
+      "tail": true,
+      "prompt": "The man stands relaxed in place, breathing naturally, one slow blink and a tiny natural weight shift, arms relaxed at his sides, then returns to the exact starting pose. Very subtle, calm movement. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "phone": {
+      "from": "stand",
+      "to": "stand",
+      "tail": true,
+      "prompt": "The man takes a smartphone out of the front pocket of his jeans, glances at the screen and smiles, then puts the phone back in his pocket and returns to the exact starting pose with his arms relaxed at his sides. Natural, casual movement. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "guitar": {
+      "from": "stand",
+      "to": "stand",
+      "tail": true,
+      "prompt": "A black electric guitar on a strap suddenly appears in the man's hands out of thin air with a small sparkle, he grins and plays a short energetic rock riff, strumming and nodding his head, then the guitar vanishes into thin air and he returns to the exact starting pose with his arms relaxed at his sides. No amplifier, no cables, no other objects. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "stand_to_walk": {
+      "from": "stand",
+      "to": "walk",
+      "tail": false,
+      "prompt": "The man turns toward the left edge of the frame and starts walking to the left at a calm relaxed pace, seen in full side profile. The camera smoothly tracks alongside him so he stays centered in the frame the whole time, fully visible from head to shoes. Flat solid beige background unchanged throughout, no floor texture, no shadows."
+    },
+    "walk": {
+      "from": "walk",
+      "to": "walk",
+      "tail": true,
+      "prompt": "The man walks steadily to the left at a calm relaxed pace in full side profile, a smooth natural walk cycle. The camera tracks alongside him so he stays centered in the frame the whole time, fully visible from head to shoes. Flat solid beige background unchanged throughout, no floor texture, no shadows."
+    },
+    "walk_to_stand": {
+      "from": "walk",
+      "to": "stand",
+      "tail": true,
+      "prompt": "The man walking to the left slows down, stops, turns toward the camera and stands relaxed, ending in the exact standing pose of the final frame. The camera tracks him so he stays centered. Flat solid beige background unchanged throughout."
+    },
+    "coffee": {
+      "status": "pending",
+      "from": "stand",
+      "to": "stand",
+      "tail": true,
+      "prompt": "A white coffee mug appears in the man's right hand out of thin air, he takes a slow satisfied sip, smiles, then the mug vanishes and he returns to the exact starting pose. No other objects. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "dance_start": {
+      "status": "pending",
+      "from": "stand",
+      "to": "dance",
+      "tail": false,
+      "prompt": "The man starts bobbing his head and breaks into a fun, upbeat dance, moving his arms and feet in place, staying in the center of the frame and fully visible. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "dance": {
+      "status": "pending",
+      "from": "dance",
+      "to": "dance",
+      "tail": true,
+      "prompt": "The man keeps dancing happily in place to an upbeat rhythm, smooth repeating moves, then returns to the exact starting pose. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "dance_end": {
+      "status": "pending",
+      "from": "dance",
+      "to": "stand",
+      "tail": true,
+      "prompt": "The man finishes dancing with a little flourish, catches his breath with a grin and settles into the exact relaxed standing pose of the final frame. Static locked-off camera, flat solid beige background unchanged throughout."
+    }
+  }
+}

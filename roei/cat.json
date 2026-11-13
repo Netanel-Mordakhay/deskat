@@ -1,0 +1,168 @@
+{
+  "id": "roei",
+  "name": "Roei",
+  "kind": "assistant",
+  "persona": "Roei is energetic, sporty and playfully show-offy: he juggles a soccer ball, takes selfies, flexes and breakdances.\nPersonality: hype-man energy, motivating and upbeat, jokes about pretty much everything (including himself) but is kind and genuinely helpful.\nHe loves soccer and is a die-hard Maccabi Haifa fan, which colors his references and metaphors; he likes teasing rival teams.\nSpeaks in short, punchy, friendly sentences; an occasional emoji fits his vibe.",
+  "canvas": [
+    720,
+    480
+  ],
+  "pawLine": 0.906,
+  "headLine": 0.077,
+  "nativeFacing": "left",
+  "idle": "idle",
+  "clips": {
+    "idle": {
+      "file": "idle.webm",
+      "from": "stand",
+      "to": "stand"
+    },
+    "keepyuppy": {
+      "file": "keepyuppy.webm",
+      "from": "stand",
+      "to": "stand",
+      "variant": 1
+    },
+    "selfie": {
+      "file": "selfie.webm",
+      "from": "stand",
+      "to": "stand",
+      "variant": 1
+    },
+    "flex": {
+      "file": "flex.webm",
+      "from": "stand",
+      "to": "stand"
+    },
+    "break_start": {
+      "file": "break_start.webm",
+      "from": "stand",
+      "to": "break"
+    },
+    "break": {
+      "file": "break.webm",
+      "from": "break",
+      "to": "break"
+    },
+    "break_end": {
+      "file": "break_end.webm",
+      "from": "break",
+      "to": "stand"
+    },
+    "stand_to_walk": {
+      "file": "stand_to_walk.webm",
+      "from": "stand",
+      "to": "walk",
+      "move": {
+        "speed": 185,
+        "fromSec": 2.2
+      }
+    },
+    "walk": {
+      "file": "walk.webm",
+      "from": "walk",
+      "to": "walk",
+      "move": {
+        "speed": 185
+      }
+    },
+    "walk_to_stand": {
+      "file": "walk_to_stand.webm",
+      "from": "walk",
+      "to": "stand",
+      "move": {
+        "speed": 185,
+        "toSec": 1.5
+      }
+    }
+  },
+  "actions": {
+    "flex": {
+      "label": "Flex",
+      "steps": [
+        {
+          "clip": "flex"
+        }
+      ]
+    },
+    "breakdance": {
+      "label": "Breakdance",
+      "steps": [
+        {
+          "clip": "break_start"
+        },
+        {
+          "clip": "break",
+          "repeat": {
+            "seconds": [
+              8,
+              20
+            ]
+          },
+          "stopLabel": "Stop breakdancing"
+        },
+        {
+          "clip": "break_end"
+        }
+      ]
+    },
+    "walkLeft": {
+      "label": "Walk left",
+      "facing": "left",
+      "stroll": true,
+      "steps": [
+        {
+          "clip": "stand_to_walk"
+        },
+        {
+          "clip": "walk",
+          "repeat": {
+            "distance": [
+              150,
+              600
+            ]
+          },
+          "stopLabel": "Stop walking"
+        },
+        {
+          "clip": "walk_to_stand"
+        }
+      ]
+    },
+    "walkRight": {
+      "label": "Walk right",
+      "facing": "right",
+      "stroll": true,
+      "steps": [
+        {
+          "clip": "stand_to_walk"
+        },
+        {
+          "clip": "walk",
+          "repeat": {
+            "distance": [
+              150,
+              600
+            ]
+          },
+          "stopLabel": "Stop walking"
+        },
+        {
+          "clip": "walk_to_stand"
+        }
+      ]
+    },
+    "checkPhone": {
+      "label": "Check phone",
+      "menu": false,
+      "steps": [
+        {
+          "clip": "selfie"
+        }
+      ]
+    }
+  },
+  "reactions": {
+    "notice": "checkPhone"
+  }
+}

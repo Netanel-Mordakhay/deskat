@@ -1,0 +1,156 @@
+{
+  "id": "grace",
+  "name": "Grace",
+  "kind": "pet",
+  "persona": "Grace is an elegant gray female cat: calm, graceful, a little regal and aloof.\nPersonality: composed, with a dry wit; mildly unimpressed by human problems, yet she always gives the right answer.\nHer cat nature shows in her attitude and perspective: she values naps, sunbeams, comfort and being admired, and she is on her own schedule.\nSpeaks in a poised, understated way.",
+  "canvas": [
+    720,
+    480
+  ],
+  "pawLine": 0.92,
+  "headLine": 0.117,
+  "nativeFacing": "left",
+  "idle": "idle",
+  "clips": {
+    "idle": {
+      "file": "idle.webm",
+      "from": "sit",
+      "to": "sit"
+    },
+    "yawn": {
+      "file": "yawn.webm",
+      "from": "sit",
+      "to": "sit",
+      "variant": 1
+    },
+    "lick": {
+      "file": "lick.webm",
+      "from": "sit",
+      "to": "sit",
+      "variant": 1
+    },
+    "pet": {
+      "file": "pet.webm",
+      "from": "sit",
+      "to": "sit"
+    },
+    "sit_to_lie": {
+      "file": "sit_to_lie.webm",
+      "from": "sit",
+      "to": "lie"
+    },
+    "lie_idle": {
+      "file": "lie_idle.webm",
+      "from": "lie",
+      "to": "lie"
+    },
+    "lie_to_sit": {
+      "file": "lie_to_sit.webm",
+      "from": "lie",
+      "to": "sit"
+    },
+    "sit_to_walk": {
+      "file": "sit_to_walk.webm",
+      "from": "sit",
+      "to": "walk",
+      "move": {
+        "speed": 220,
+        "fromSec": 2.0
+      }
+    },
+    "walk": {
+      "file": "walk.webm",
+      "from": "walk",
+      "to": "walk",
+      "move": {
+        "speed": 220
+      }
+    },
+    "walk_to_sit": {
+      "file": "walk_to_sit.webm",
+      "from": "walk",
+      "to": "sit",
+      "move": {
+        "speed": 220,
+        "toSec": 1.2
+      }
+    }
+  },
+  "actions": {
+    "pet": {
+      "label": "Pet Grace",
+      "steps": [
+        {
+          "clip": "pet"
+        }
+      ]
+    },
+    "lieOnBack": {
+      "label": "Lie on your back",
+      "steps": [
+        {
+          "clip": "sit_to_lie"
+        },
+        {
+          "clip": "lie_idle",
+          "repeat": {
+            "seconds": [
+              10,
+              30
+            ]
+          },
+          "stopLabel": "Get up"
+        },
+        {
+          "clip": "lie_to_sit"
+        }
+      ]
+    },
+    "walkLeft": {
+      "label": "Walk left",
+      "facing": "left",
+      "stroll": true,
+      "steps": [
+        {
+          "clip": "sit_to_walk"
+        },
+        {
+          "clip": "walk",
+          "repeat": {
+            "distance": [
+              150,
+              600
+            ]
+          },
+          "stopLabel": "Sit down"
+        },
+        {
+          "clip": "walk_to_sit"
+        }
+      ]
+    },
+    "walkRight": {
+      "label": "Walk right",
+      "facing": "right",
+      "stroll": true,
+      "steps": [
+        {
+          "clip": "sit_to_walk"
+        },
+        {
+          "clip": "walk",
+          "repeat": {
+            "distance": [
+              150,
+              600
+            ]
+          },
+          "stopLabel": "Sit down"
+        },
+        {
+          "clip": "walk_to_sit"
+        }
+      ]
+    }
+  }
+}

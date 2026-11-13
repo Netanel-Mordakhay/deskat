@@ -1,0 +1,176 @@
+{
+  "id": "nati",
+  "name": "Nati",
+  "kind": "assistant",
+  "persona": "Nati is a young Israeli software developer, recently graduated, who loves building things.\nPersonality: warm, upbeat and casual, like a friendly coworker at the next desk; encouraging and practical, with some self-deprecating humor.\nInterests that can color his replies when they fit: coding and side projects, coffee, playing guitar, spontaneous dance breaks.\nHe is a little paranoid about breaking production: risky moves (deploys, Friday changes, deleting things, \"quick fixes\") make him nervous, and he leans toward backups and testing first.\nSpeaks naturally and briefly; may slip in a casual Hebrew word now and then, but answers in the user's language.",
+  "canvas": [
+    720,
+    480
+  ],
+  "pawLine": 0.915,
+  "headLine": 0.065,
+  "nativeFacing": "left",
+  "idle": "idle",
+  "clips": {
+    "idle": {
+      "file": "idle.webm",
+      "from": "stand",
+      "to": "stand"
+    },
+    "phone": {
+      "file": "phone.webm",
+      "from": "stand",
+      "to": "stand",
+      "variant": 2
+    },
+    "guitar": {
+      "file": "guitar.webm",
+      "from": "stand",
+      "to": "stand",
+      "variant": 1
+    },
+    "stand_to_walk": {
+      "file": "stand_to_walk.webm",
+      "from": "stand",
+      "to": "walk",
+      "move": {
+        "speed": 255,
+        "fromSec": 2.6
+      }
+    },
+    "walk": {
+      "file": "walk.webm",
+      "from": "walk",
+      "to": "walk",
+      "move": {
+        "speed": 255
+      }
+    },
+    "walk_to_stand": {
+      "file": "walk_to_stand.webm",
+      "from": "walk",
+      "to": "stand",
+      "move": {
+        "speed": 255,
+        "toSec": 1.5
+      }
+    },
+    "coffee": {
+      "file": "coffee.webm",
+      "from": "stand",
+      "to": "stand"
+    },
+    "dance_start": {
+      "file": "dance_start.webm",
+      "from": "stand",
+      "to": "dance"
+    },
+    "dance": {
+      "file": "dance.webm",
+      "from": "dance",
+      "to": "dance"
+    },
+    "dance_end": {
+      "file": "dance_end.webm",
+      "from": "dance",
+      "to": "stand"
+    }
+  },
+  "actions": {
+    "coffee": {
+      "label": "Coffee sip",
+      "steps": [
+        {
+          "clip": "coffee"
+        }
+      ]
+    },
+    "dance": {
+      "label": "Dance break",
+      "steps": [
+        {
+          "clip": "dance_start"
+        },
+        {
+          "clip": "dance",
+          "repeat": {
+            "seconds": [
+              8,
+              20
+            ]
+          },
+          "stopLabel": "Stop dancing"
+        },
+        {
+          "clip": "dance_end"
+        }
+      ]
+    },
+    "riff": {
+      "label": "Play a riff",
+      "steps": [
+        {
+          "clip": "guitar"
+        }
+      ]
+    },
+    "walkLeft": {
+      "label": "Walk left",
+      "facing": "left",
+      "stroll": true,
+      "steps": [
+        {
+          "clip": "stand_to_walk"
+        },
+        {
+          "clip": "walk",
+          "repeat": {
+            "distance": [
+              150,
+              600
+            ]
+          },
+          "stopLabel": "Stop walking"
+        },
+        {
+          "clip": "walk_to_stand"
+        }
+      ]
+    },
+    "walkRight": {
+      "label": "Walk right",
+      "facing": "right",
+      "stroll": true,
+      "steps": [
+        {
+          "clip": "stand_to_walk"
+        },
+        {
+          "clip": "walk",
+          "repeat": {
+            "distance": [
+              150,
+              600
+            ]
+          },
+          "stopLabel": "Stop walking"
+        },
+        {
+          "clip": "walk_to_stand"
+        }
+      ]
+    },
+    "checkPhone": {
+      "label": "Check phone",
+      "menu": false,
+      "steps": [
+        {
+          "clip": "phone"
+        }
+      ]
+    }
+  },
+  "reactions": {
+    "notice": "checkPhone"
+  }
+}

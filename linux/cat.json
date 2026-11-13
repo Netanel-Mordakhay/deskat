@@ -1,0 +1,156 @@
+{
+  "id": "linux",
+  "name": "Linux",
+  "kind": "pet",
+  "persona": "Linux is a black male cat named after the operating system: curious, mischievous and a bit chaotic, with a nerdy streak.\nPersonality: playful, excitable and quick; easily distracted (cursor, things on the desk) but sharp and genuinely helpful.\nHis references lean toward computers, terminals and cat mischief.\nSpeaks in a lively, bouncy way.",
+  "canvas": [
+    720,
+    480
+  ],
+  "pawLine": 0.92,
+  "headLine": 0.119,
+  "nativeFacing": "left",
+  "idle": "idle",
+  "clips": {
+    "idle": {
+      "file": "idle.webm",
+      "from": "sit",
+      "to": "sit"
+    },
+    "yawn": {
+      "file": "yawn.webm",
+      "from": "sit",
+      "to": "sit",
+      "variant": 1
+    },
+    "lick": {
+      "file": "lick.webm",
+      "from": "sit",
+      "to": "sit",
+      "variant": 1
+    },
+    "pet": {
+      "file": "pet.webm",
+      "from": "sit",
+      "to": "sit"
+    },
+    "sit_to_lie": {
+      "file": "sit_to_lie.webm",
+      "from": "sit",
+      "to": "lie"
+    },
+    "lie_idle": {
+      "file": "lie_idle.webm",
+      "from": "lie",
+      "to": "lie"
+    },
+    "lie_to_sit": {
+      "file": "lie_to_sit.webm",
+      "from": "lie",
+      "to": "sit"
+    },
+    "sit_to_walk": {
+      "file": "sit_to_walk.webm",
+      "from": "sit",
+      "to": "walk",
+      "move": {
+        "speed": 220,
+        "fromSec": 1.9
+      }
+    },
+    "walk": {
+      "file": "walk.webm",
+      "from": "walk",
+      "to": "walk",
+      "move": {
+        "speed": 220
+      }
+    },
+    "walk_to_sit": {
+      "file": "walk_to_sit.webm",
+      "from": "walk",
+      "to": "sit",
+      "move": {
+        "speed": 220,
+        "toSec": 1.2
+      }
+    }
+  },
+  "actions": {
+    "pet": {
+      "label": "Pet Linux",
+      "steps": [
+        {
+          "clip": "pet"
+        }
+      ]
+    },
+    "lieOnBack": {
+      "label": "Lie on your back",
+      "steps": [
+        {
+          "clip": "sit_to_lie"
+        },
+        {
+          "clip": "lie_idle",
+          "repeat": {
+            "seconds": [
+              10,
+              30
+            ]
+          },
+          "stopLabel": "Get up"
+        },
+        {
+          "clip": "lie_to_sit"
+        }
+      ]
+    },
+    "walkLeft": {
+      "label": "Walk left",
+      "facing": "left",
+      "stroll": true,
+      "steps": [
+        {
+          "clip": "sit_to_walk"
+        },
+        {
+          "clip": "walk",
+          "repeat": {
+            "distance": [
+              150,
+              600
+            ]
+          },
+          "stopLabel": "Sit down"
+        },
+        {
+          "clip": "walk_to_sit"
+        }
+      ]
+    },
+    "walkRight": {
+      "label": "Walk right",
+      "facing": "right",
+      "stroll": true,
+      "steps": [
+        {
+          "clip": "sit_to_walk"
+        },
+        {
+          "clip": "walk",
+          "repeat": {
+            "distance": [
+              150,
+              600
+            ]
+          },
+          "stopLabel": "Sit down"
+        },
+        {
+          "clip": "walk_to_sit"
+        }
+      ]
+    }
+  }
+}

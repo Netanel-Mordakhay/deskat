@@ -1,0 +1,85 @@
+{
+  "cat": "linux",
+  "defaults": {
+    "model": "kling-video-v2_5",
+    "resolution": "1080p",
+    "duration": "5",
+    "enable_audio": "false",
+    "negativeHint": "Static locked-off camera, flat solid beige background unchanged throughout."
+  },
+  "poses": {
+    "sit": {
+      "image": "poses/sit.jpg"
+    },
+    "lie": {
+      "image": "poses/lie.jpg",
+      "from": "last frame of sit_to_lie"
+    },
+    "walk": {
+      "image": "poses/walk.jpg",
+      "from": "a mid-stride side-profile frame of sit_to_walk_full"
+    }
+  },
+  "clips": {
+    "idle": {
+      "from": "sit",
+      "to": "sit",
+      "tail": true,
+      "prompt": "The cat sits calmly in place, breathing gently and slowly. One slow relaxed blink. No other movement — ears, tail and head stay still. The cat stays in exactly the same position and returns to the exact starting pose. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "yawn": {
+      "from": "sit",
+      "to": "sit",
+      "tail": true,
+      "prompt": "The cat closes its eyes and gives one big slow yawn with its mouth wide open, then closes its mouth, blinks, and settles back into the exact calm starting pose. Body, paws and tail stay in place. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "lick": {
+      "from": "sit",
+      "to": "sit",
+      "tail": true,
+      "prompt": "The cat lifts one front paw, licks it a few times with its tongue, then puts the paw back down on the ground and settles back into the exact starting pose. Natural cat grooming motion. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "pet": {
+      "from": "sit",
+      "to": "sit",
+      "tail": true,
+      "prompt": "The cat enjoys being petted by an unseen person: it half-closes its eyes contentedly, tilts its head and rubs its cheek to the side as if leaning into a gentle stroke, purring happily, then opens its eyes and returns to the exact starting pose. No hands, no people, no objects visible. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "sit_to_lie": {
+      "from": "sit",
+      "to": "lie",
+      "tail": false,
+      "prompt": "The cat lies down and then rolls slowly and playfully onto its back, belly up, front paws curled in the air, and stays relaxed lying on its back for the last second. The cat stays in the center of the frame and fully visible. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "sit_to_walk": {
+      "from": "sit",
+      "to": "walk",
+      "tail": false,
+      "prompt": "The cat stands up, turns toward the left edge of the frame and starts walking to the left at a calm relaxed pace, seen in full side profile. The camera smoothly tracks alongside the cat so it stays centered in the frame the whole time, the cat is fully visible from ears to tail. Flat solid beige background unchanged throughout, no floor texture, no shadows."
+    },
+    "lie_idle": {
+      "from": "lie",
+      "to": "lie",
+      "tail": true,
+      "prompt": "The cat lies relaxed on its back, belly up, breathing slowly, paws twitching lazily in the air, one slow blink, then returns to the exact starting pose. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "lie_to_sit": {
+      "from": "lie",
+      "to": "sit",
+      "tail": true,
+      "prompt": "The cat rolls off its back, gets up and sits upright, ending in the exact sitting pose of the final frame. The cat stays in the center of the frame. Static locked-off camera, flat solid beige background unchanged throughout."
+    },
+    "walk": {
+      "from": "walk",
+      "to": "walk",
+      "tail": true,
+      "prompt": "The cat walks steadily to the left at a calm relaxed pace in full side profile, a smooth natural walk cycle. The camera tracks alongside the cat so it stays centered in the frame the whole time. Flat solid beige background unchanged throughout, no floor texture, no shadows."
+    },
+    "walk_to_sit": {
+      "from": "walk",
+      "to": "sit",
+      "tail": true,
+      "prompt": "The cat walking to the left slows down, stops, turns toward the camera and sits down, ending in the exact sitting pose of the final frame. The camera tracks the cat so it stays centered. Flat solid beige background unchanged throughout."
+    }
+  }
+}
